@@ -11,11 +11,12 @@ import Testimonials from "./components/Testimonials";
 import EnquireForm from "./components/EnquireForm";
 import Footer from "./components/Footer";
 import RevealProvider from "./components/RevealProvider";
-
+import ContactForm from "./components/ContactForm";
 export default function Home() {
   return (
     <RevealProvider>
       <NavBar />
+
       <main>
         <Hero />
         <TrackRecord />
@@ -27,7 +28,9 @@ export default function Home() {
         <Faqs />
         <Testimonials />
         <EnquireForm />
+        <ContactForm />
       </main>
+
       <Footer />
     </RevealProvider>
   );

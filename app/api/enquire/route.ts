@@ -3,24 +3,28 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, workEmail, company } = body ?? {};
 
-    if (!name || !workEmail || !company) {
+    const { name, email, company } = body;
+
+    if (!name || !email || !company) {
       return NextResponse.json(
-        { error: "Missing required fields." },
+        { error: "Please fill all required fields." },
         { status: 400 }
       );
     }
 
-    // Mock persistence layer. Replace with a CRM/email integration
-    // (HubSpot, SendGrid, etc.) in production.
-    console.log("New enterprise enquiry:", body);
+    console.log("New Lead:", body);
 
-    return NextResponse.json({ ok: true }, { status: 200 });
+    return NextResponse.json({
+      success: true,
+      message: "Thank you! We'll contact you soon.",
+    });
   } catch {
     return NextResponse.json(
-      { error: "Invalid request payload." },
-      { status: 400 }
+      {
+        error: "Something went wrong.",
+      },
+      { status: 500 }
     );
   }
 }

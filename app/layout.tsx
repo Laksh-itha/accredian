@@ -24,8 +24,16 @@ export const metadata: Metadata = {
   title: "Accredian Enterprise | Corporate Training That Moves the Skill Gap Needle",
   description:
     "Enterprise upskilling programs built on the CAT Framework — Concept, Application, Tools. Trusted by Reliance, IBM, HCL, ADP, Bayer and CRIF.",
+  keywords: [
+    "Accredian",
+    "Enterprise",
+    "Corporate Training",
+    "Workforce Upskilling",
+    "Learning Platform",
+    "Employee Training",
+  ],
+  authors: [{ name: "Lakshitha R" }],
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
